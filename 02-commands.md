@@ -114,3 +114,13 @@
 | Retrouver un commit « perdu » | `git reflog` |
 
 > ⚠️ **Règle d'or** : sur un commit déjà poussé et partagé, utilisez `git revert`, **jamais** `git reset --hard` + `push --force`.
+
+## 2.9 Tags (versions)
+
+| Commande | Description |
+|----------|-------------|
+| `git tag` | Liste les tags |
+| `git tag -a v1.2.0 -m "Version 1.2.0"` | Crée un tag annoté |
+| `git push origin v1.2.0` | Pousse un tag |
+| `git push --tags` | Pousse tous les tags |
+| `git tag -d v1.2.0` | Supprime un tag local |
