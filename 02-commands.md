@@ -48,3 +48,18 @@
 | `git commit --amend` | Modifie le **dernier** commit (si pas encore poussé !) |
 | `git rm <fichier>` | Supprime un fichier et enregistre la suppression |
 | `git mv <ancien> <nouveau>` | Renomme / déplace un fichier |
+
+## 2.4 Branches
+
+| Commande | Description |
+|----------|-------------|
+| `git branch` | Liste les branches locales |
+| `git branch -a` | Liste toutes les branches (locales + distantes) |
+| `git switch <branche>` | Change de branche |
+| `git switch -c <branche>` | Crée une branche et bascule dessus |
+| `git switch -c <branche> origin/<branche>` | Récupère une branche distante en local |
+| `git branch -d <branche>` | Supprime une branche (déjà fusionnée) |
+| `git branch -D <branche>` | Force la suppression ⚠️ |
+| `git branch -m <nouveau-nom>` | Renomme la branche courante |
+
+> ℹ️ `git checkout <branche>` et `git checkout -b <branche>` fonctionnent aussi (ancienne syntaxe).
