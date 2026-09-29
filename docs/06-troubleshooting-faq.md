@@ -210,7 +210,13 @@ git branch --merged develop | Where-Object { $_ -notmatch '^\*|main|develop' } |
 
 ---
 
+### ❓ Différence entre `reset`, `revert` et `restore` ?
 
+| Commande | Agit sur | Réécrit l'historique ? |
+|----------|----------|------------------------|
+| `git restore` | Les fichiers (répertoire de travail / staging) | Non |
+| `git reset` | La position de la branche (commits locaux) | **Oui** ⚠️ |
+| `git revert` | Crée un nouveau commit qui annule un ancien | Non ✅ (sûr pour les commits poussés) |
 
 ---
 
