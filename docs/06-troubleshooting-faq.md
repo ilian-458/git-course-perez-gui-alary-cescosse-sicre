@@ -39,3 +39,36 @@ git commit --amend --no-edit
 ```
 
 ---
+
+### ❓ Je veux annuler mon dernier commit
+
+| Cas | Commande |
+|-----|----------|
+| Pas poussé, je garde mes modifications | `git reset --soft HEAD~1` |
+| Pas poussé, je jette tout ⚠️ | `git reset --hard HEAD~1` |
+| **Déjà poussé** | `git revert HEAD` puis `git push` |
+
+---
+
+### ❓ J'ai des modifications en cours mais je dois changer de branche
+
+```bash
+git stash push -m "wip formulaire"
+git switch autre-branche
+# ... plus tard ...
+git switch ma-branche
+git stash pop
+```
+
+---
+
+### ❓ `git push` est refusé : « rejected — non-fast-forward »
+
+Quelqu'un a poussé avant vous. Récupérez ses changements puis repoussez :
+
+```bash
+git pull --rebase
+git push
+```
+
+❌ Ne faites **pas** `git push --force` pour « forcer le passage ».
