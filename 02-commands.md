@@ -28,8 +28,8 @@
 |----------|-------------|
 | `git status` | État des fichiers (modifiés, en staging, non suivis) |
 | `git status -sb` | Version courte |
-| `git dif` | Modifications **non** encore ajoutées |
-| `git dif --staged` | Modifications ajoutées (prêtes à être commitées) |
+| `git diff` | Modifications **non** encore ajoutées |
+| `git diff --staged` | Modifications ajoutées (prêtes à être commitées) |
 | `git log` | Historique des commits |
 | `git log --oneline --graph --all` | Historique compact et graphique |
 | `git log -p <fichier>` | Historique détaillé d'un fichier |
