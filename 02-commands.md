@@ -100,3 +100,15 @@
 | `git stash pop` | Réapplique le dernier stash et le supprime |
 | `git stash apply stash@{1}` | Réapplique un stash précis sans le supprimer |
 | `git stash drop` | Supprime le dernier stash |
+
+## 2.8 Annuler
+
+| Situation | Commande |
+|-----------|----------|
+| Annuler les modifs d'un fichier (non ajouté) | `git restore <fichier>` |
+| Retirer un fichier du staging | `git restore --staged <fichier>` |
+| Annuler le dernier commit, **garder** les modifs | `git reset --soft HEAD~1` |
+| Annuler le dernier commit, modifs remises en non-staging | `git reset HEAD~1` |
+| Annuler le dernier commit **et** les modifs ⚠️ | `git reset --hard HEAD~1` |
+| Annuler un commit **déjà poussé** (crée un commit inverse) | `git revert <commit>` |
+| Retrouver un commit « perdu » | `git reflog` |
