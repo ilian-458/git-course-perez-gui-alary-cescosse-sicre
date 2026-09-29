@@ -141,3 +141,23 @@
 > ℹ️ Chez nous, les `feature` sont intégrées via **Pull Request** (et non via `git flow feature finish`), afin de garantir la revue de code. Voir le [chapitre 3](03-workflow-gitflow.md).
 
 ---
+
+## 📄 Version « à imprimer »
+
+```text
+┌──────────────────────── ROUTINE QUOTIDIENNE ────────────────────────┐
+│ git switch develop && git pull          # se mettre à jour          │
+│ git switch -c feature/PROJ-42-ma-tache  # nouvelle branche          │
+│ ... coder ...                                                       │
+│ git status / git diff                   # vérifier                  │
+│ git add -p                              # choisir ce qu'on commit   │
+│ git commit -m "feat(auth): ajoute ..."  # commiter                  │
+│ git fetch && git rebase origin/develop  # rester à jour             │
+│ git push -u origin feature/PROJ-42-...  # pousser                   │
+│ → ouvrir une Pull Request vers develop                              │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+[⬅ Précédent : Installation](01-installation-configuration.md) · [➡ Suite : Workflow Gitflow](03-workflow-gitflow.md)
