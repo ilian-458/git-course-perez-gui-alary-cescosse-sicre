@@ -112,3 +112,5 @@
 | Annuler le dernier commit **et** les modifs ⚠️ | `git reset --hard HEAD~1` |
 | Annuler un commit **déjà poussé** (crée un commit inverse) | `git revert <commit>` |
 | Retrouver un commit « perdu » | `git reflog` |
+
+> ⚠️ **Règle d'or** : sur un commit déjà poussé et partagé, utilisez `git revert`, **jamais** `git reset --hard` + `push --force`.
