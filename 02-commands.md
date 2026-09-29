@@ -76,3 +76,11 @@
 | `git push -u origin <branche>` | Premier push d'une nouvelle branche (lie la branche locale à la distante) |
 | `git push origin --delete <branche>` | Supprime une branche distante |
 | `git push --force-with-lease` | Push forcé **sécurisé** (uniquement sur *votre* branche) |
+
+## 2.6 Fusionner
+
+| Commande | Description |
+|----------|-------------|
+| `git merg <branche>` | Fusionne `<branche>` dans la branche courante |
+| `git merg --no-ff <branche>` | Fusion avec commit de merge obligatoire (utilisé dans Gitflow) |
+| `git merg --abort` | Annule une fusion en cours (conflit) |
