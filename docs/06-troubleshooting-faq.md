@@ -112,3 +112,69 @@ git commit -m "chore: retire .env du suivi git"
 ---
 
 ### ❓ Je suis au milieu d'un merge / rebase et je suis perdu
+
+```bash
+git status            # Git indique où vous en êtes
+git merge --abort     # annule le merge
+git rebase --abort    # annule le rebase
+```
+
+Vous revenez exactement à l'état d'avant.
+
+---
+
+### ❓ « You are in 'detached HEAD' state »
+
+Vous êtes sur un commit précis, pas sur une branche. Pour revenir :
+
+```bash
+git switch develop
+```
+
+Si vous avez fait des commits dans cet état et voulez les garder :
+
+```bash
+git switch -c ma-nouvelle-branche
+```
+
+---
+
+### ❓ Je veux récupérer un seul commit d'une autre branche
+
+```bash
+git switch ma-branche
+git cherry-pick <hash-du-commit>
+```
+
+---
+
+### ❓ Je veux voir qui a modifié une ligne et pourquoi
+
+```bash
+git blame -L 40,60 src/panier.js
+git show <hash>
+```
+
+---
+
+### ❓ Je veux retrouver le commit qui a introduit un bug
+
+```bash
+git bisect start
+git bisect bad                 # la version actuelle est buggée
+git bisect good v1.2.0         # cette version fonctionnait
+# Git vous place sur un commit intermédiaire : testez puis tapez
+git bisect good   # ou   git bisect bad
+# ... répétez jusqu'à ce que Git trouve le coupable ...
+git bisect reset
+```
+
+---
+
+### ❓ Ma branche distante a été supprimée mais apparaît encore
+
+```bash
+git fetch --prune
+```
+
+---
