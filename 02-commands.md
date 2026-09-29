@@ -124,3 +124,20 @@
 | `git push origin v1.2.0` | Pousse un tag |
 | `git push --tags` | Pousse tous les tags |
 | `git tag -d v1.2.0` | Supprime un tag local |
+
+## 2.10 Commandes git-flow (extension)
+
+| Commande | Équivalent |
+|----------|-----------|
+| `git flow init -d` | Initialise Gitflow dans le dépôt |
+| `git flow feature start <nom>` | Crée `feature/<nom>` depuis `develop` |
+| `git flow feature publish <nom>` | Pousse la feature sur le serveur |
+| `git flow feature finish <nom>` | Fusionne dans `develop` et supprime la branche |
+| `git flow release start <version>` | Crée `release/<version>` depuis `develop` |
+| `git flow release finish <version>` | Fusionne dans `main` + `develop`, crée le tag |
+| `git flow hotfix start <version>` | Crée `hotfix/<version>` depuis `main` |
+| `git flow hotfix finish <version>` | Fusionne dans `main` + `develop`, crée le tag |
+
+> ℹ️ Chez nous, les `feature` sont intégrées via **Pull Request** (et non via `git flow feature finish`), afin de garantir la revue de code. Voir le [chapitre 3](03-workflow-gitflow.md).
+
+---
