@@ -81,9 +81,9 @@
 
 | Commande | Description |
 |----------|-------------|
-| `git merg <branche>` | Fusionne `<branche>` dans la branche courante |
-| `git merg --no-ff <branche>` | Fusion avec commit de merge obligatoire (utilisé dans Gitflow) |
-| `git merg --abort` | Annule une fusion en cours (conflit) |
+| `git merge <branche>` | Fusionne `<branche>` dans la branche courante |
+| `git merge --no-ff <branche>` | Fusion avec commit de merge obligatoire (utilisé dans Gitflow) |
+| `git merge --abort` | Annule une fusion en cours (conflit) |
 | `git rebase <branche>` | Rejoue vos commits au-dessus de `<branche>` |
 | `git rebase -i HEAD~3` | Réorganise / fusionne / renomme les 3 derniers commits |
 | `git rebase --continue` / `--abort` | Poursuit / annule un rebase |
