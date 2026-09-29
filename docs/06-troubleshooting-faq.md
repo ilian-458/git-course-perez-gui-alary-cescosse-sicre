@@ -178,3 +178,49 @@ git fetch --prune
 ```
 
 ---
+
+### ❓ Supprimer les branches locales déjà fusionnées
+
+```bash
+# Bash (Linux / macOS / Git Bash)
+git branch --merged develop | grep -vE "^\*|main|develop" | xargs git branch -d
+```
+
+```powershell
+# PowerShell
+git branch --merged develop | Where-Object { $_ -notmatch '^\*|main|develop' } | ForEach-Object { git branch -d $_.Trim() }
+```
+
+---
+
+### ❓ Différence entre `merge` et `rebase` ?
+
+| | `merge` | `rebase` |
+|---|---------|----------|
+| Historique | Conserve tout, ajoute un commit de merge | Linéaire, réécrit vos commits |
+| Sécurité | Sans risque sur une branche partagée | ⚠️ Uniquement sur **votre** branche |
+| Usage chez nous | Intégrations `release`/`hotfix` → `main`/`develop` | Mettre à jour sa `feature` avec `develop` |
+
+---
+
+### ❓ Différence entre `fetch` et `pull` ?
+
+- `git fetch` : télécharge les nouveautés du serveur **sans toucher** à vos fichiers.
+- `git pull` : `fetch` **+** intègre les changements dans votre branche courante.
+
+---
+
+
+
+---
+
+## 🆘 Toujours bloqué ?
+
+1. Ne lancez pas de commande au hasard trouvée sur internet.
+2. Faites une sauvegarde : `git branch sauvegarde-$(date +%Y%m%d)`.
+3. Copiez la sortie de `git status` et `git log --oneline -10`.
+4. Demandez de l'aide sur `#git-help` ou à votre Tech Lead.
+
+---
+
+[⬅ Précédent : Bonnes pratiques](05-bonnes-pratiques.md) · [🏠 Retour au sommaire](README.md)
