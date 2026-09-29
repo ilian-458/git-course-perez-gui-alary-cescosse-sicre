@@ -22,6 +22,7 @@
 ❌ À éviter : `test`, `ma-branche`, `Feature/Login`, `fix_bug_pierre`, `nouvelle branche`
 
 ---
+
 ## 5.2 Messages de commit — Conventional Commits
 
 **Format** :
@@ -89,6 +90,7 @@ correction du bug de jean + ajout page contact + refacto css
 - Le code de chaque commit doit **compiler / fonctionner**.
 
 ---
+
 ## 5.3 Bonnes pratiques au quotidien
 
 ### ✅ À faire
@@ -151,3 +153,57 @@ Ticket : PROJ-XXX
 - [ ] Pas de secret, de log de debug ou de code commenté
 - [ ] Ma branche est à jour avec develop
 ```
+
+---
+
+## 5.5 Revue de code
+
+### Checklist du relecteur
+
+- [ ] Le code répond au besoin du ticket
+- [ ] Le code est lisible (nommage, découpage, commentaires utiles)
+- [ ] Les cas d'erreur et cas limites sont gérés
+- [ ] Des tests couvrent la modification
+- [ ] Pas de faille de sécurité évidente (injection, données sensibles exposées…)
+- [ ] Pas de duplication inutile
+- [ ] Respect des conventions du projet
+
+### Savoir-être
+
+- On commente **le code, pas la personne**.
+- Formuler des **questions / suggestions** : « Que penses-tu de… ? » plutôt que « C'est faux ».
+- Préfixer les remarques mineures : `nit:` (détail), `question:`, `suggestion:`, `bloquant:`.
+- Répondre aux revues sous **24 h ouvrées**.
+- Souligner aussi ce qui est bien fait 👍.
+
+---
+
+## 5.6 Sécurité
+
+- Le fichier `.env` est dans le `.gitignore` ; fournir un `.env.example` **sans valeurs réelles**.
+- Si un secret a été commité, même supprimé ensuite, il **reste dans l'historique** :
+  1. **Révoquer / changer le secret immédiatement** (c'est la priorité).
+  2. Prévenir le Tech Lead.
+  3. Nettoyer l'historique si nécessaire (`git filter-repo`, BFG) — opération encadrée par le Tech Lead.
+- Activer l'authentification à deux facteurs (2FA) sur votre compte GitHub/GitLab.
+- (Recommandé) Signer ses commits : `git config --global commit.gpgsign true`.
+
+---
+
+## 5.7 CHANGELOG
+
+Chaque release met à jour `CHANGELOG.md` (format [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/)) :
+
+```markdown
+## [1.3.0] - 2026-09-29
+### Ajouté
+- Connexion par e-mail (PROJ-42)
+### Corrigé
+- Format des dates dans l'export PDF (PROJ-57)
+### Modifié
+- Délai d'expiration de session porté à 30 min
+```
+
+---
+
+[⬅ Précédent : Tutoriels](04-tutoriels.md) · [➡ Suite : Dépannage & FAQ](06-depannage-faq.md)
