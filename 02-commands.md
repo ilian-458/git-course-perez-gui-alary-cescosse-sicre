@@ -88,3 +88,15 @@
 | `git rebase -i HEAD~3` | Réorganise / fusionne / renomme les 3 derniers commits |
 | `git rebase --continue` / `--abort` | Poursuit / annule un rebase |
 | `git cherry-pick <commit>` | Applique un commit précis sur la branche courante |
+
+## 2.7 Mettre de côté (stash)
+
+| Commande | Description |
+|----------|-------------|
+| `git stash` | Met de côté les modifications en cours |
+| `git stash push -m "wip formulaire"` | Idem, avec un nom |
+| `git stash -u` | Inclut aussi les fichiers non suivis |
+| `git stash list` | Liste les stashs |
+| `git stash pop` | Réapplique le dernier stash et le supprime |
+| `git stash apply stash@{1}` | Réapplique un stash précis sans le supprimer |
+| `git stash drop` | Supprime le dernier stash |
