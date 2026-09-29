@@ -63,3 +63,16 @@
 | `git branch -m <nouveau-nom>` | Renomme la branche courante |
 
 > ℹ️ `git checkout <branche>` et `git checkout -b <branche>` fonctionnent aussi (ancienne syntaxe).
+
+## 2.5 Synchroniser avec le dépôt distant
+
+| Commande | Description |
+|----------|-------------|
+| `git remote -v` | Liste les dépôts distants |
+| `git fetch` | Télécharge les nouveautés **sans** modifier vos fichiers |
+| `git pull` | `fetch` + intégration dans la branche courante |
+| `git pull --rebase` | `fetch` + rebase (historique linéaire) |
+| `git push` | Envoie vos commits |
+| `git push -u origin <branche>` | Premier push d'une nouvelle branche (lie la branche locale à la distante) |
+| `git push origin --delete <branche>` | Supprime une branche distante |
+| `git push --force-with-lease` | Push forcé **sécurisé** (uniquement sur *votre* branche) |
