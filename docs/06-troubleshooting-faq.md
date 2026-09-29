@@ -72,3 +72,43 @@ git push
 ```
 
 ❌ Ne faites **pas** `git push --force` pour « forcer le passage ».
+---
+
+### ❓ `git pull` me dit que j'ai des modifications locales qui seraient écrasées
+
+```bash
+git stash
+git pull
+git stash pop
+```
+
+---
+
+### ❓ J'ai supprimé une branche / fait un `reset --hard` par erreur
+
+```bash
+git reflog
+# repérez la ligne correspondant à l'état voulu, par ex. :  a1b2c3d HEAD@{5}: commit: feat: ...
+git branch recuperation a1b2c3d
+```
+
+`reflog` garde la trace de tous les déplacements de `HEAD` pendant environ 90 jours.
+
+---
+
+### ❓ J'ai commité un fichier qui aurait dû être ignoré
+
+```bash
+# 1. L'ajouter au .gitignore
+echo ".env" >> .gitignore
+
+# 2. Le retirer du suivi Git (sans le supprimer du disque)
+git rm --cached .env
+git commit -m "chore: retire .env du suivi git"
+```
+
+🔐 **S'il s'agit d'un secret** : il reste dans l'historique → **changez-le immédiatement** et prévenez le Tech Lead (voir [Sécurité](05-bonnes-pratiques.md#56-sécurité)).
+
+---
+
+### ❓ Je suis au milieu d'un merge / rebase et je suis perdu
