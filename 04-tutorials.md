@@ -1,3 +1,7 @@
+# 4. Tutorials
+
+[⬅ Retour au sommaire](README.md)
+
 Chaque tutoriel donne **les commandes Git classiques** et, quand c'est utile, l'équivalent avec l'extension **git-flow**.
 
 - [Tuto 1 — Récupérer un projet (premier jour)](#tuto-1--récupérer-un-projet-premier-jour)
@@ -362,3 +366,5 @@ git push --force-with-lease
 > ⚠️ Uniquement sur **votre** branche de feature, jamais sur `develop` ou `main`.
 
 ---
+
+[⬅ Précédent : Workflow Gitflow](03-workflow-gitflow.md) · [➡ Suite : Bonnes pratiques](05-bonnes-pratiques.md)
